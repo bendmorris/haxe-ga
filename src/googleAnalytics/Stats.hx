@@ -1,7 +1,6 @@
 package googleAnalytics;
 
 #if (flash || openfl)
-import extension.locale.Locale;
 import flash.net.SharedObject;
 import flash.system.Capabilities;
 import flash.Lib;
@@ -103,7 +102,7 @@ class Stats {
 
 		#if (flash || openfl)
 		visitor.setScreenResolution(''+Capabilities.screenResolutionX+'x'+Capabilities.screenResolutionY);
-		visitor.setLocale(Locale.getLangCode());
+		visitor.setLocale(flash.system.Capabilities.language);
 		#else
 		visitor.setScreenResolution('1024x768');
 		visitor.setLocale('en_US');
